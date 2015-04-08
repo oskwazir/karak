@@ -20,6 +20,7 @@ const handleConnection = function handleConnection(conn){
 
   console.log(`new client connection from ${remoteAddress}`);
 
+  conn.setEncoding('utf8');
   conn.on('data', onConnectionData);
   conn.on('close', onConnectionClose);
   conn.on('error', onConnectionError);
